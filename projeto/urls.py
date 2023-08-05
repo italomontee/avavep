@@ -16,12 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+#
+#HTTP REQUEST
 
-def my_view():
-    print('oi')
 
+def my_view(request):
+
+    #return HTTP Response
+    return HttpResponse('oi')
 
 urlpatterns = [
+    #path recebe uma rota e uma view
+    #a view recebe uma request
     path('admin/', admin.site.urls),
     path('sobre/', my_view)
-]
+    ]
